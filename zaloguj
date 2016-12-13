@@ -1,0 +1,18 @@
+<?php
+session_save_path('/home/stud/witkowsp/WWW/htdocs/');
+session_start();
+$login="student";
+$haslo="zet";
+
+if($login== $_POST['login'] && $haslo == $_POST['haslo']){
+	 $_SESSION['zalogowano']=true;
+	header('Location: form.php');
+}else{
+	$_SESSION['blad'] = '<span style="color:red">Nieprawidłowy login lub hasło!</span><br/>';
+     header('Location: index.php');
+	
+}
+
+
+
+?>
